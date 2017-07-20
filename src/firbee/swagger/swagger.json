@@ -1,0 +1,250 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "测试 API 接口",
+        "description": "mobile has every tool to get any job done, so codename for the new mobile APIs.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        }
+    },
+    "basePath": "/webservice",
+    "paths": {
+        "/user/AddUser": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "description": "新增用户",
+                "operationId": "UserController.新增用户",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "Name",
+                        "description": "用户名",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Pass",
+                        "description": "密码",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Email",
+                        "description": "邮箱",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Phone",
+                        "description": "手机号",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Image",
+                        "description": "头像",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Addr",
+                        "description": "联系地址",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Birth",
+                        "description": "出生日期",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User对象"
+                    },
+                    "400": {
+                        "description": "服务器异常"
+                    },
+                    "404": {
+                        "description": "接口丢失"
+                    }
+                }
+            }
+        },
+        "/user/DelUser": {
+            "delete": {
+                "tags": [
+                    "user"
+                ],
+                "description": "删除用户",
+                "operationId": "UserController.删除用户",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "Id",
+                        "description": "The Id of user",
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User对象"
+                    },
+                    "400": {
+                        "description": "服务器异常"
+                    },
+                    "404": {
+                        "description": "接口丢失"
+                    }
+                }
+            }
+        },
+        "/user/EditUser": {
+            "put": {
+                "tags": [
+                    "user"
+                ],
+                "description": "编辑用户",
+                "operationId": "UserController.编辑用户",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "Id",
+                        "description": "The Id of user",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Name",
+                        "description": "用户名",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Pass",
+                        "description": "密码",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Email",
+                        "description": "邮箱",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Phone",
+                        "description": "手机号",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Image",
+                        "description": "头像",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Addr",
+                        "description": "联系地址",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "Birth",
+                        "description": "出生日期",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User对象"
+                    },
+                    "400": {
+                        "description": "服务器异常"
+                    },
+                    "404": {
+                        "description": "接口丢失"
+                    }
+                }
+            }
+        },
+        "/user/GetUserById": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "description": "根据ID查询用户",
+                "operationId": "UserController.根据ID查询用户",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "Id",
+                        "description": "The Id of user",
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User对象"
+                    },
+                    "400": {
+                        "description": "服务器异常"
+                    },
+                    "404": {
+                        "description": "接口丢失"
+                    }
+                }
+            }
+        },
+        "/user/GetUsers": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "description": "get all of user",
+                "operationId": "UserController.获取所有用户",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "The pageNumber of user",
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User对象"
+                    },
+                    "400": {
+                        "description": "服务器异常"
+                    },
+                    "404": {
+                        "description": "接口丢失"
+                    }
+                }
+            }
+        }
+    }
+}
